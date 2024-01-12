@@ -5,9 +5,9 @@ from datetime import *
 from math import *
 from config import DIRECTORY
 
-set = [566, 42]
+set = [559,119]
 #corresponding coordinates
-coords = [46.8077700019549, -91.8312990064853]
+coords = [46.709661380664,-90.7521041722859]
 
 #VALIDATES THAT ALL DATA EXISTS FOR the sets above and extracts temp into a single set
 

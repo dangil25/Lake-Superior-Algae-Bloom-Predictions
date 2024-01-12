@@ -6,7 +6,7 @@ import re
 from config import DIRECTORY
 
 #this takes all the data for a specific buoy and converts into a daily average from 2012 - 2023
-buoy = "pngw3"
+buoy = "sxhw3"
 
 
 def download():

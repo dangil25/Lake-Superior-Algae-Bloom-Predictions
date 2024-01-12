@@ -8,8 +8,8 @@ matplotlib.use('TkAgg')
 
 
 
-buoy = 45028
-sst = [566, 42]
+buoy = "dulm5"
+sst = [563,23]
 buoylocation = DIRECTORY + f"/processor/processedData/alldata/{buoy}.txt"
 sstlocation = DIRECTORY + f'/processor/processedData/alldata/{sst[0]}_{sst[1]}.txt'
 

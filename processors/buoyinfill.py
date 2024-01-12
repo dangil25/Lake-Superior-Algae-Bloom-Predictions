@@ -8,7 +8,7 @@ from config import DIRECTORY
 
 #Creates and imputes any missing buoy data
 
-buoy = 45028
+buoy = "pngw3"
 
 
 #processed buoy data for corresponding location

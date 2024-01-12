@@ -1,6 +1,8 @@
 import numpy as np
 import pandas as pd
-buoy = 45028
+from config import DIRECTORY
+
+buoy = "pngw3"
 
 def round(x):
     x = str(x)
@@ -8,8 +10,8 @@ def round(x):
     x = x[:ind] + x[ind:ind+3]
     return x
 
-outlocation = f'C:/Users/danik2/Documents/School Files/Algae Research/python/processor/processedData/alldata/{buoy}.txt'
-emptyfillloc = f'C:/Users/danik2/Documents/School Files/Algae Research/python/processor/data/buoy/{buoy}/emptyfill.xlsx'
+outlocation = DIRECTORY + f'/processor/processedData/alldata/{buoy}.txt'
+emptyfillloc = DIRECTORY + f'/processor/data/buoy/{buoy}/emptyfill.xlsx'
 
 df = pd.read_excel(emptyfillloc, sheet_name='emptyfill')
 

@@ -10,14 +10,11 @@ from config import DIRECTORY
 #The output is formatted: lat, long, lat index, long index, distance
 
 
-
-
-
 #Location
-group = 3
-location = [46.707900, -90.757341]
+group = 4
+location = [48.223, -88.366]
 #Max distance to location
-limit = 3
+limit = 1
 
 
 def daycalc (day):

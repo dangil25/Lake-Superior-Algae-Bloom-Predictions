@@ -2,8 +2,9 @@ import numpy as np
 import pandas as pd
 from config import DIRECTORY
 
-#fill all empty rows with np.nan for good graphing
-buoy = 45028
+#removes rows before june 1st and after oct 31st and
+# fills all empty rows with np.nan for good graphing
+buoy = "sxhw3"
 
 buoylocation = DIRECTORY + f'/processor/data/buoy/{buoy}/daily.xlsx'
 emptyfill = DIRECTORY + f'/processor/data/buoy/{buoy}/emptyfill.xlsx'
@@ -49,6 +50,7 @@ def cleaner():
     df = pd.read_excel(buoylocation, sheet_name='daily')
     df = df[df['MM'] < 11]
     df = df[df['MM'] > 5]
+    df = df.reset_index(drop=True);
     return df
 
 
