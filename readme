@@ -20,8 +20,7 @@ Contains everything (uploaded to git)
         SST by location
         River by location
     Processors -
-        buoyemptyfill -
-        buoyinfill -
-        buoytempExtract -
+        buoyextract - converts data to daily, averages ATMP, weighted average of WDIR, average of WSPD
         distanceselector - finds sst locations within limit distance of location
-        ssttempExtract -
+        ssttempExtract - extracts sst data by day for location
+        riverextract - extracts river discharge data

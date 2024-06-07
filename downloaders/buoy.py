@@ -35,4 +35,6 @@ for buoyid in buoyids:
     df = pd.DataFrame(splitter(data), columns=heading.split())
     df = df.drop(columns=['hh', 'mm', 'GST', 'WVHT', 'DPD', 'APD', 'MWD', 'PRES', 'WTMP', 'DEWP', 'VIS', 'TIDE'])
     df['ATMP'].replace([999.0, 99.0], np.nan, inplace=True)
-    df.to_string(f"{DIRECTORY}/processor/data/buoy/{buoyid}_raw.txt", index=False)
+    df['WDIR'].replace(999.0, np.nan, inplace=True)
+    df['WSPD'].replace(99.0, np.nan, inplace=True)
+    df.to_csv(f"{DIRECTORY}/processor/data/buoy/{buoyid}_raw.txt", index=False)

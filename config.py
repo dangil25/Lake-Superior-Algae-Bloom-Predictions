@@ -7,4 +7,5 @@ riverids = {"st.louis": "04024000",
             "badriver": "04027000",
             "pigeonriver": "04010500"}
 rivernames = list(riverids.keys())
-buoyids = {'dulm5', 'pilm4', 'pngw3', 'sxhw3'}
+buoyids = ['dulm5', 'pilm4', 'pngw3', 'sxhw3']
+sets = [[563,23], [565,73], [559,119], [661,249]]
