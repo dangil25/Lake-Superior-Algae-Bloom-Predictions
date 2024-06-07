@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from config import DIRECTORY
+from processor.config import DIRECTORY
 
 
 #removes rows before june 1st and after oct 31st and

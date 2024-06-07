@@ -1,8 +1,5 @@
-import seaborn as sns
-from seaborn import heatmap
 import pandas as pd
-from matplotlib import pyplot as plt
-from config import DIRECTORY
+from processor.config import DIRECTORY
 import matplotlib
 matplotlib.use('TkAgg')
 

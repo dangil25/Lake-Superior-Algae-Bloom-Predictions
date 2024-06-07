@@ -1,0 +1,27 @@
+File Structure:
+
+Config -
+Global Variables: Home Directory Path
+
+
+Processor -
+Contains everything (uploaded to git)
+    Data -
+        Raw & Partial Data
+        Buoy - key file with info by year
+        River - discharge , by location, ft^3
+        SST - readings for entire area by day
+    Downloaders -
+        Automatic downloaders for each type of data
+        Restarter: runs multiple processes in parallel
+    Processed Data -
+        Processed Data of each type consolidated into needed ranges
+        Buoy by location
+        SST by location
+        River by location
+    Processors -
+        buoyemptyfill -
+        buoyinfill -
+        buoytempExtract -
+        distanceselector - finds sst locations within limit distance of location
+        ssttempExtract -

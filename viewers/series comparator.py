@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib
 import matplotlib.pyplot as plt
-from config import *
+from processor.config import *
 matplotlib.use('TkAgg')
 
 buoy = "dulm5"

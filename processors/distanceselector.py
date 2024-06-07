@@ -1,10 +1,7 @@
-import requests
-import os
 from netCDF4 import *
-from datetime import *
 from math import *
 
-from config import DIRECTORY
+from processor.config import DIRECTORY
 
 #This finds and returns all satellite temp points within limit miles of location
 #The output is formatted: lat, long, lat index, long index, distance

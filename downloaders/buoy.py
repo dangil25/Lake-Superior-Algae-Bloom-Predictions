@@ -1,8 +1,7 @@
 import numpy as np
 import pandas as pd
 import requests
-import os
-from config import *
+from processor.config import *
 
 
 # buoy to process
@@ -20,12 +19,6 @@ def splitter(inp):
 def download(buoy):
     out = ""
     head = ""
-    # downloads yearly data from 2012-2022
-    folder = DIRECTORY + f'/processor/data/buoy/{buoy}'
-    # create folder
-    if (not os.path.isdir(folder)):
-        os.makedirs(folder)
-    # download
     for year in range(2012, 2024):
         url = f'https://www.ndbc.noaa.gov/view_text_file.php?filename={buoy}h{year}.txt.gz&dir=data/historical/stdmet/'
         print(url)
@@ -42,4 +35,4 @@ for buoyid in buoyids:
     df = pd.DataFrame(splitter(data), columns=heading.split())
     df = df.drop(columns=['hh', 'mm', 'GST', 'WVHT', 'DPD', 'APD', 'MWD', 'PRES', 'WTMP', 'DEWP', 'VIS', 'TIDE'])
     df['ATMP'].replace([999.0, 99.0], np.nan, inplace=True)
-    df.to_string(f"{DIRECTORY}/processor/data/buoy/{buoyid}/data.txt")
+    df.to_string(f"{DIRECTORY}/processor/data/buoy/{buoyid}_raw.txt", index=False)

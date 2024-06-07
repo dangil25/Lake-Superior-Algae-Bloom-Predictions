@@ -1,6 +1,6 @@
 import requests
 import os
-from config import *
+from processor.config import *
 
 #date format 2012-01-01
 #date range to download

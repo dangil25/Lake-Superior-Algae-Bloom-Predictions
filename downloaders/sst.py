@@ -1,11 +1,8 @@
 import requests
 import os
-from datetime import *
-from math import *
-from config import DIRECTORY
+from processor.config import DIRECTORY
 
 #long, lat
-from netCDF4 import *
 def monthcalc (year, day):
     #Returns two-digit string of month
     if (year % 4 == 0): days = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]

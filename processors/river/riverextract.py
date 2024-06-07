@@ -1,4 +1,4 @@
-from config import *
+from processor.config import *
 
 codes = {"discharge": "00060"}
 dayinmonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
@@ -20,14 +20,15 @@ def dischargedata():
             inpath = DIRECTORY + f'/processor/data/river/{codename}_{river}.txt'
             outpath = DIRECTORY + f'/processor/processedData/river/{codename}_{river}_final.txt'
             file = open(inpath, "r")
-            out = ""
+            out = "YY MM DD DISC \n"
             for line in file:
                 if (line[0:4] == "USGS"):
                     l = line.split("\t")
                     date = l[2]
+                    procdate = date.split('-')[0] + " " + date.split('-')[1] + " " + date.split('-')[2]
                     if (inrange(date.split("-"))):
                         meandischarge = l[3]
-                        out += date + " " + meandischarge + "\n"
+                        out += procdate + " " + meandischarge + "\n"
             file.close()
             open(outpath, 'w').write(out)
         except:

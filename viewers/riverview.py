@@ -1,7 +1,6 @@
-import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
-from config import *
+from processor.config import *
 matplotlib.use('TkAgg')
 river = rivernames[1]
 dischargelocation = DIRECTORY + f"/processor/processedData/river/discharge_{river}_final.txt"

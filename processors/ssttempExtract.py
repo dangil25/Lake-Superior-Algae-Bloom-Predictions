@@ -1,9 +1,5 @@
-import requests
-import os
 from netCDF4 import *
-from datetime import *
-from math import *
-from config import DIRECTORY
+from processor.config import DIRECTORY
 
 set = [661,249]
 #corresponding coordinates
