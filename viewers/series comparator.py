@@ -1,12 +1,8 @@
 import numpy as np
-import matplotlib.pyplot as plt
-import pandas as pd
 import matplotlib
-from config import DIRECTORY
+import matplotlib.pyplot as plt
+from config import *
 matplotlib.use('TkAgg')
-
-
-
 
 buoy = "dulm5"
 sst = [563,23]

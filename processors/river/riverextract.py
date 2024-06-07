@@ -1,6 +1,4 @@
-from config import DIRECTORY
-from config import riverids
-from config import rivernames
+from config import *
 
 codes = {"discharge": "00060"}
 dayinmonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
@@ -19,8 +17,8 @@ def dischargedata():
     for river in rivernames:
         try:
             codename = "discharge"
-            inpath = DIRECTORY + f'/processor/data/river/{codename}/{codename}_{river}.txt'
-            outpath = DIRECTORY + f'/processor/processedData/river/{codename}/{codename}_{river}_final'
+            inpath = DIRECTORY + f'/processor/data/river/{codename}_{river}.txt'
+            outpath = DIRECTORY + f'/processor/processedData/river/{codename}_{river}_final.txt'
             file = open(inpath, "r")
             out = ""
             for line in file:

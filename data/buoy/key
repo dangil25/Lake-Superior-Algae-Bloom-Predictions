@@ -5,8 +5,4 @@ pngw3 - group 2: [565,73]: 46.7937544846276,-91.3968179693401
 SXHW3 - group 3: [559,119]: 46.709661380664,-90.7521041722859
 pilm4 -  group 4: [661,249]: 48.1392441480451,-88.9300869197414
 
-alldata - full set of everything
-daily - cuts out all unncessary stuff and takes averages
-emptyfill - isolates june1st to october 31st and creates missing rows
-truncfill - imputes any partially missing data and creates missing rows
-fullfill - imputes completely missing rows
+
