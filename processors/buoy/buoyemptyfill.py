@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 from config import DIRECTORY
 
+
 #removes rows before june 1st and after oct 31st and
 # fills all empty rows with np.nan for good graphing
 buoy = "sxhw3"
@@ -68,6 +69,7 @@ def createMissing(df):
                 print(arr[0], arr[1], arr[2])
                 index = df.loc[(df['#YY'] == arr[0]) & (df['MM'] == arr[1]) & (df['DD'] == arr[2])].index
                 df = pd.DataFrame(np.insert(df.values, index + 1, values = [year, month, realday, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan], axis = 0), columns = df.columns)
+    df.reset_index(drop = True)
     df.to_excel(emptyfill, index = False, sheet_name = 'emptyfill')
 
 df = cleaner()

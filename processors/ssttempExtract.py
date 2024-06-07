@@ -5,9 +5,9 @@ from datetime import *
 from math import *
 from config import DIRECTORY
 
-set = [559,119]
+set = [661,249]
 #corresponding coordinates
-coords = [46.709661380664,-90.7521041722859]
+coords = [48.1392441480451,-88.9300869197414]
 
 #VALIDATES THAT ALL DATA EXISTS FOR the sets above and extracts temp into a single set
 
@@ -49,6 +49,7 @@ def validator(year, day):
     dataset.close()
 
 for year in range (2012, 2024):
+    print(year)
     modifier = 0
     if (year % 4 == 0):
         modifier = 1

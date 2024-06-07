@@ -1,0 +1,19 @@
+distanceselector -
+given a set of coordinates, it finds all satellite scan locations within limit
+group # corresponds to the given group to make output easier to match
+
+ssttempExtract -
+Given a set of long and lat ids,  the extractor prints all temperature from june1st
+to october 31st in a text file labeled latid_longid.txt. Just in case, it also takes the real coordinates
+and makes sure the id matches on each sst file.
+
+buoytempExtract -
+Given a buoy id, it does the same as above and prints to buoyid.txt
+
+buoyemptyfill -
+Takes buoy data and isolates from june1st to october 31st.
+It then creates any missing rows, but leaves them blank.
+
+buoyinfill -same as empty fill but fills with imputed values
+
+

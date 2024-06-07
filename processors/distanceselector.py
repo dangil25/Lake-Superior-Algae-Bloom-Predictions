@@ -12,7 +12,7 @@ from config import DIRECTORY
 
 #Location
 group = 4
-location = [48.223, -88.366]
+location = [48.133107, -88.929242]
 #Max distance to location
 limit = 1
 
