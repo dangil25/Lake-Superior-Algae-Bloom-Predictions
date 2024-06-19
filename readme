@@ -24,3 +24,10 @@ Contains everything (uploaded to git)
         distanceselector - finds sst locations within limit distance of location
         ssttempExtract - extracts sst data by day for location
         riverextract - extracts river discharge data
+        consolidator - combines all data into a single file for each group
+
+Groups: buoy - sst set - river
+    1: dulm5 - [563,23] - st.louis
+    2: pngw3 - [565,73] - boisbrule
+    3: sxhw3 - [559,119] - badriver
+    4: pilm4 - [661,249] - pigeonriver
