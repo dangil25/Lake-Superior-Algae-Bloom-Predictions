@@ -20,7 +20,7 @@ def dischargedata():
             inpath = DIRECTORY + f'/data/raw/river/{codename}_{river}.txt'
             outpath = DIRECTORY + f'/data/processed/river/{codename}_{river}_final.txt'
             file = open(inpath, "r")
-            out = "YY,MM,DD,DISC \n"
+            out = "YY,MM,DD,DISC\n"
             for line in file:
                 if (line[0:4] == "USGS"):
                     l = line.split("\t")

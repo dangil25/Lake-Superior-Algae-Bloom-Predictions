@@ -34,7 +34,7 @@ def validator(year, day):
 
 for set in sets.values():
     outlocation = DIRECTORY + f'/data/processed/sst/{set[0]}_{set[1]}.txt'
-    out = "YY,MM,DD,WTMP \n"
+    out = "YY,MM,DD,WTMP\n"
     for year in range(2012, 2024):
         print(year)
         modifier = 0

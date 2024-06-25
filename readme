@@ -26,8 +26,14 @@ Contains everything (uploaded to git)
         riverextract - extracts river discharge data
         consolidator - combines all data into a single file for each group
 
+Path of all data is:
+downloader -> extract -> consolidator -> main
+
 Groups: buoy - sst set - river
-    1: dulm5 - [563,23] - st.louis
-    2: pngw3 - [565,73] - boisbrule
-    3: sxhw3 - [559,119] - badriver
-    4: pilm4 - [661,249] - pigeonriver
+    1: dulm5 - [563,23] - st.louis - all times used
+    2: pngw3 - [565,73] - boisbrule - 2016 oct, 2018, 2019 dropped due to missing data
+    3: sxhw3 - [559,119] - badriver - 2019 dropped due to missing data
+    4: pilm4 - [661,249] - pigeonriver - 2012, 2018 dropped due to missing data
+
+Last column of final data is bloom "probability", which is 1 on the day of observation
+and decreases by 0.2 for each day from the closest bloom at that location
