@@ -7,26 +7,25 @@ from sklearn.preprocessing import StandardScaler
 import numpy as np
 import torch
 
-def df_to_X_y(df, window_size=5):
-  df_as_np = df.to_numpy()
-  X = []
-  y = []
-  for i in range(len(df_as_np)-window_size):
-    row = [[a] for a in df_as_np[i:i+window_size]]
-    X.append(row)
-    label = df_as_np[i+window_size]
-    y.append(label)
-  return np.array(X), np.array(y)
+def df_to_X_y(df, window_size=14):
+    df_as_np = (df.drop('bloom', axis = 1)).to_numpy()
+    X = []
+    y = df['bloom'][window_size:].values.tolist()
+    for i in range(len(df_as_np)-window_size):
+        row = np.array(df_as_np[i:i+window_size])
+        # uncomment line below to flip rows and columns
+        # row = row.transpose()
+        X.append(row)
+    return X, y
 
 
 #preprocessing
 df = []
-
-#global df combining all four locations, with one-hot encoding for location
-global_df = pd.DataFrame(columns=['group1', 'group2', 'group3', 'group4', 'WDIRcos', 'WDIRsin', 'WSPD', 'ATMP', 'WTMP', 'DISC', 'bloom'])
+X = []
+y = []
 
 for group in range (0, 4):
-    df.append(pd.read_csv(f'{DIRECTORY}/data/final/group_{group + 1}.txt', index_col=0))
+    df.append(pd.read_csv(f'{DIRECTORY}/data/final/group_{group + 1}_interpolated.txt', index_col=0))
     #changing index to datetime
     df[group].index = pd.to_datetime(df[group].index)
 
@@ -40,12 +39,20 @@ for group in range (0, 4):
     df[group][quantile] = quantiletransformer.fit_transform(df[group][quantile])
 
     #one-hot encoding groups
-    df[group].insert(0, 'group1', int(0 == group))
-    df[group].insert(1, 'group2', int(1 == group))
-    df[group].insert(2, 'group3', int(2 == group))
-    df[group].insert(3, 'group4', int(3 == group))
+    df[group].insert(0, 'group1', float(0 == group))
+    df[group].insert(1, 'group2', float(1 == group))
+    df[group].insert(2, 'group3', float(2 == group))
+    df[group].insert(3, 'group4', float(3 == group))
 
-    #reshaping each feature into including 14 days before it,
+    #reshaping each feature into including 14 days before it: X is 14 arrays of 11 elements each.
+    X_group, y_group = df_to_X_y(df[group], window_size=14)
+    X.extend(X_group)
+    y.extend(y_group)
+
+print(X)
+print(y)
+
+
 
 
 

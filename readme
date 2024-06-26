@@ -2,6 +2,7 @@ File Structure:
 
 Config -
 Global Variables: Home Directory Path
+Information for each group: river, buoy, sst, blooms
 
 
 Processor -
