@@ -1,21 +1,27 @@
 import torch
-from torch import nn
+import torch.nn as nn
 from config import *
 import pandas as pd
 from sklearn.preprocessing import QuantileTransformer
 from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
 import numpy as np
 import torch
 
+#TODO: Prevent contamination by only fitting scalers on training set
+
+device = 'cuda:0' if torch.cuda.is_available() else "cpu"
+print(device)
 def df_to_X_y(df, window_size=14):
+    #window size is the number of days into LSTM
     df_as_np = (df.drop('bloom', axis = 1)).to_numpy()
     X = []
     y = df['bloom'][window_size:].values.tolist()
     for i in range(len(df_as_np)-window_size):
-        row = np.array(df_as_np[i:i+window_size])
+        row = df_as_np[i:i+window_size]
         # uncomment line below to flip rows and columns
         # row = row.transpose()
-        X.append(row)
+        X.append(row.tolist())
     return X, y
 
 
@@ -49,10 +55,10 @@ for group in range (0, 4):
     X.extend(X_group)
     y.extend(y_group)
 
-print(X)
-print(y)
 
-
+X_tensor = torch.tensor(X, dtype=torch.float64)
+print(X_tensor.shape)
+print(X_tensor)
 
 
 

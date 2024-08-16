@@ -41,6 +41,7 @@ for group in range(1, 5):
                              (df.index >= "2020-06-01")]
     if (group == 4): df = df[((df.index >= "2013-06-01") & (df.index <= "2017-10-31")) |
                              (df.index >= "2019-06-01")]
+    
 
     #saving before interpolation
     df.to_csv(f"{DIRECTORY}/data/final/group_{group}.txt")

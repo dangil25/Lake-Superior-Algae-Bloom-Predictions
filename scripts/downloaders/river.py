@@ -33,9 +33,6 @@ def download():
             open(path, 'wb').write(req.content)
 
 
-
-
-
 def main():
     download()
 main()
